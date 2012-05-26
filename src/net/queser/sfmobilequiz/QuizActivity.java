@@ -26,10 +26,21 @@
  */
 package net.queser.sfmobilequiz;
 
+import java.util.Set;
+
 import android.app.Activity;
+import android.app.Dialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.salesforce.androidsdk.app.ForceApp;
 import com.salesforce.androidsdk.rest.ClientManager;
@@ -41,6 +52,8 @@ import com.salesforce.androidsdk.rest.RestClient;
  * Main activity
  */
 public class QuizActivity extends Activity {
+	private static RestClient sfdcRestClient;
+	private Set<Integer> selectedOptions;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -87,17 +100,14 @@ public class QuizActivity extends Activity {
 					ForceApp.APP.logout(QuizActivity.this);
 					return;
 				}
-				
-				// Show everything
 				findViewById(R.id.root).setVisibility(View.VISIBLE);
-
 				// Show welcome
-				((TextView) findViewById(R.id.welcome_text)).setText(getString(R.string.welcome, client.getClientInfo().username));
-				
+				sfdcRestClient = client;
+				showQuestion();				
 			}
 		});
 	}
-	
+		
 	@Override
 	public void onUserInteraction() {
 		/*
@@ -106,6 +116,36 @@ public class QuizActivity extends Activity {
 		ForceApp.APP.getPasscodeManager().recordUserInteraction();
 		
 		*/
+	}
+	
+	public void showQuestion() {
+
+		((TextView) findViewById(R.id.question)).setText(getString(R.string.welcome, sfdcRestClient.getClientInfo().username));
+		
+		final ListView answers = (ListView)findViewById(R.id.list);
+		String[] options = new String[]{"option 1 kjdfldkf d;lfkjd;lfkasf;lkasf d;lfkkkkkkkka asfllk ad'aflksf;lakd", "option2", "optoin 3", "option 1", "option2", "optoin 3", "option 1", "option2", "optoin 3",};
+		
+		AnswersArrayAdapter ansAdapter = new AnswersArrayAdapter(this, R.layout.option, options);  
+		answers.setAdapter(ansAdapter);
+		
+	}
+	
+	public void onCheckAnswers(View v) {
+		final Dialog dialog = new Dialog(this);
+		dialog.setContentView(R.layout.dialog);
+		dialog.setTitle("Result");
+		TextView text = (TextView) dialog.findViewById(R.id.text); 
+		text.setText(AnswersArrayAdapter.selectedOptions.toString());
+		
+		Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
+		dialogButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				dialog.dismiss();
+			}
+		});
+
+		dialog.show();		
 	}
 
 	/**

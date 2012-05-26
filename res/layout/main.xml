@@ -6,12 +6,24 @@
 
 	<include layout="@layout/header" />
 
-	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-		android:layout_width="fill_parent" android:layout_height="fill_parent">
+    <TextView
+        android:id="@+id/question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="24sp" />
 
-		<TextView android:id="@+id/welcome_text" android:layout_width="wrap_content"
-			android:layout_height="wrap_content" android:layout_centerHorizontal="true"
-			android:layout_centerVertical="true" android:textSize="24sp"/>
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.82" >
 
-	</RelativeLayout>
+    </ListView>
+
+    <Button
+        android:id="@+id/buttonCheckResult"
+        android:layout_width="123dp"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonCheck" 
+        android:onClick="onCheckAnswers"/>
 </LinearLayout>

@@ -16,38 +16,40 @@ public final class R {
         public static final int icon=0x7f020002;
     }
     public static final class id {
-        public static final int answersList=0x7f070011;
         public static final int apply_button=0x7f070003;
+        public static final int buttonCheckResult=0x7f07000e;
         public static final int cancel_button=0x7f070004;
-        public static final int clear_cookies_button=0x7f070008;
+        public static final int clear_cookies_button=0x7f07000a;
+        public static final int dialogButtonOK=0x7f070006;
         public static final int layout_root=0x7f070000;
-        public static final int linearLayout=0x7f070012;
-        public static final int logout_button=0x7f070005;
-        public static final int menu_clear_custom_url=0x7f070015;
-        public static final int oauth_webview=0x7f070006;
-        public static final int passcode_error=0x7f07000f;
-        public static final int passcode_instructions=0x7f070010;
-        public static final int passcode_text=0x7f07000e;
-        public static final int passcode_title=0x7f07000d;
-        public static final int pick_server_button=0x7f070007;
+        public static final int linearLayout=0x7f070014;
+        public static final int list=0x7f07000d;
+        public static final int logout_button=0x7f070007;
+        public static final int menu_clear_custom_url=0x7f070017;
+        public static final int oauth_webview=0x7f070008;
+        public static final int optionCheckbox=0x7f07000f;
+        public static final int passcode_error=0x7f070012;
+        public static final int passcode_instructions=0x7f070013;
+        public static final int passcode_text=0x7f070011;
+        public static final int passcode_title=0x7f070010;
+        public static final int pick_server_button=0x7f070009;
         public static final int picker_custom_label=0x7f070001;
         public static final int picker_custom_url=0x7f070002;
         public static final int question=0x7f07000c;
-        public static final int radio=0x7f07000b;
-        public static final int root=0x7f070009;
-        public static final int server_list_group=0x7f070013;
-        public static final int show_custom_url_edit=0x7f070014;
-        public static final int welcome_text=0x7f07000a;
+        public static final int root=0x7f07000b;
+        public static final int server_list_group=0x7f070015;
+        public static final int show_custom_url_edit=0x7f070016;
+        public static final int text=0x7f070005;
     }
     public static final class layout {
         public static final int custom_server_url=0x7f030000;
-        public static final int header=0x7f030001;
-        public static final int login=0x7f030002;
-        public static final int login_header=0x7f030003;
-        public static final int main=0x7f030004;
-        public static final int option=0x7f030005;
-        public static final int passcode=0x7f030006;
-        public static final int question=0x7f030007;
+        public static final int dialog=0x7f030001;
+        public static final int header=0x7f030002;
+        public static final int login=0x7f030003;
+        public static final int login_header=0x7f030004;
+        public static final int main=0x7f030005;
+        public static final int option=0x7f030006;
+        public static final int passcode=0x7f030007;
         public static final int server_picker=0x7f030008;
     }
     public static final class menu {
@@ -59,6 +61,8 @@ public final class R {
         public static final int app_name=0x7f05001c;
         public static final int auth_login_production=0x7f050008;
         public static final int auth_login_sandbox=0x7f050009;
+        public static final int buttonCheck=0x7f050023;
+        public static final int buttonNext=0x7f050024;
         public static final int clear_cookies_button=0x7f050006;
         public static final int custom_url_button=0x7f05000a;
         public static final int encoding=0x7f050021;
@@ -73,7 +77,7 @@ public final class R {
  Login 
          */
         public static final int login_title=0x7f050004;
-        public static final int logout_button=0x7f050023;
+        public static final int logout_button=0x7f050025;
         public static final int oauth_callback_url=0x7f05001e;
         public static final int oauth_client_id=0x7f05001f;
         public static final int passcode_confirm_instructions=0x7f050015;
